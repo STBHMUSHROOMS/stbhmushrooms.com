@@ -158,8 +158,110 @@
 </body>
 </html>
  
- <div class="nav">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STBH Mushrooms</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav {
+      background-color: #4caf50;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+      font-weight: bold;
+    }
+
+    .nav a:hover {
+      background-color: #2e7d32;
+      color: white;
+    }
+
+    .content {
+      display: none;
+      padding: 20px;
+      background: #f0f0f0;
+      margin: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #productsContent, #contactContent {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav">
     <a href="#" id="homeLink">Home</a>
+    <a href="#" id="productsLink">Products</a>
+    <a href="#" id="contactLink">Contact</a>
+  </div>
+
+  <div id="homeContent" class="content">
+    <h2>Welcome to STBH Mushrooms</h2>
+    <p>Your one-stop shop for healthy, fresh, and organic mushrooms.</p>
+  </div>
+
+  <div id="productsContent" class="content">
+    <h2>Our Products</h2>
+    <ul>
+      <li>Fresh Button Mushrooms - ₹180/kg</li>
+      <li>Grey Oyster Mushroom Block - ₹338/450g</li>
+      <li>Mushroom Substrate Pack - ₹320/900g</li>
+    </ul>
+  </div>
+
+  <div id="contactContent" class="content">
+    <h2>Contact Us</h2>
+    <p>Email: info@stbhmushrooms.com</p>
+    <p>Phone: +91 94902 23695</p>
+    <p>Address: Ramakrishnapura, Industrial Hub, Palasa, Srikakulam District, Andhra Pradesh.</p>
+  </div>
+
+  <script>
+    // JavaScript to handle clicks
+    document.getElementById('homeLink').addEventListener('click', function(event) {
+      event.preventDefault();
+      showContent('homeContent');
+    });
+
+    document.getElementById('productsLink').addEventListener('click', function(event) {
+      event.preventDefault();
+      showContent('productsContent');
+    });
+
+    document.getElementById('contactLink').addEventListener('click', function(event) {
+      event.preventDefault();
+      showContent('contactContent');
+    });
+
+    function showContent(contentId) {
+      const contents = document.querySelectorAll('.content');
+      contents.forEach(content => content.style.display = 'none');
+      document.getElementById(contentId).style.display = 'block';
+    }
+
+    // Show home content by default
+    showContent('homeContent');
+  </script>
+
+</body>
+</html>
 
    
 
